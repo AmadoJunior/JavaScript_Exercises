@@ -2,6 +2,10 @@
 Write a function which takes in a string and returns: 
 Counts of each char in the string.
 */
+//Write the problem in your own words
+/*
+    -Count the number of times each character appears in a string.
+*/
 
 //Write out simple examples and consider edge cases
 charCount("aaaa");
