@@ -1,0 +1,22 @@
+{
+  "name": "javascript_master_course",
+  "version": "1.0.0",
+  "description": "Code Snippet Collection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmadoJunior/JavaScript_Exercises.git"
+  },
+  "keywords": [
+    "'"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmadoJunior/JavaScript_Exercises/issues"
+  },
+  "homepage": "https://github.com/AmadoJunior/JavaScript_Exercises#readme"
+}
