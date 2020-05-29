@@ -43,7 +43,7 @@ charCount("Your PIN number is 1234");
      *  if character is something (space, period, etc.) don't do anything
      * return object at end
      */
-function charCount(str){ //Runs in O(n) time, takes O(n) space
+function charCount(str){ //Runs in O(n) time, takes O(1) space
     let charObject = {};
     let regExp = /\w/;
 
