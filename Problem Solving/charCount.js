@@ -43,9 +43,10 @@ charCount("Your PIN number is 1234");
      *  if character is something (space, period, etc.) don't do anything
      * return object at end
      */
-function charCount(str){
+function charCount(str){ //Runs in O(n) time, takes O(n) space
     let charObject = {};
     let regExp = /\w/;
+
     for(let i = 0; i < str.length; i++){
         const char = str[i].toLowerCase();
         if(char.match(regExp)){
@@ -54,11 +55,33 @@ function charCount(str){
             } else {
                 charObject[char] = 1;
             }
-        } else {
-            continue;
         }
-        
+    }
+
+    return charObject;
+}
+
+function charCountOptimized(str){
+    let charObject = {};
+
+    for(let char of str){
+        if(isAlphaNumeric(char)){
+            char = char.toLowerCase();
+            charObject[char] = ++charObject[char] || 1;
+        }
     }
     return charObject;
 }
+//It is more efficient to check char codes instead of using a regular expression
+function isAlphaNumeric(char){
+    let code = char.charCodeAt(0);
+    if(!(code > 47 && code < 58) &&
+        !(code > 64 && code < 91) &&
+        !(code > 96 && code < 123)){
+            return false;
+        }
+    return true;
+}
+
 console.log(charCount("Your PIN is 1234!"));
+console.log(charCountOptimized("Your PIN is 1234!"));
