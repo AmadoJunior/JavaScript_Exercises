@@ -20,6 +20,7 @@ console.log(sumZeroNaive([-4,-3,-2,-1,0,1,2,5]));
 
 //Multiple Pointers Solution: O(N) Time, O(1) Space
 function sumZero(arr){
+    
     let left = 0;
     let right = arr.length-1;
 
