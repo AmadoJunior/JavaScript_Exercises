@@ -10,6 +10,7 @@ function countDownNaive(num){
 function countDown(num){
     if(num <= 0){
         console.log("All done");
+        //return in order to break out of the function
         return;
     }
     console.log(num);
