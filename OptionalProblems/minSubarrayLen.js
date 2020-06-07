@@ -1,39 +1,31 @@
 /**
- * Write a function caleld minSubarrayLen which accepts two parameters - 
- * an array of positive integers and a positive integer.
+ * Write a function called minSubArrayLen which accepts two parameters
+ * - an array of positive integers and a positive a integer.
  * 
- * This function should return a minimal length of a contiguous subarray which
- * the sum is greater than or equal to the integer passed to the function.
- * If there isnt one, return 0 instead.
+ * This function should return a minimal elngth of a contigous subarray 
+ * of which the sum is greater than to the integers passed to the funciton.
+ * If there isn't one, return 0 instead.
  */
 
-function minSubarrayLen(arr, targetSum){
-    let total = 0;
-    let start = 0;
-    let end = 0;
-    let minLen = Infinity;
+function minSubArrayLen(numsArray, num){
+    let i = 0;
+    let j = 0;
+    let sum = 0;
+    let minArrayLength = Infinity;
 
-    while(start < arr.length){
-        /**
-         * If the current window doesn't add up to the given sum then move the
-         * second "end" pointer to the right in order to make the sum subarray bigger.
-         */
-        if(total < targetSum && end < arr.length){
-            total += arr[end];
-            end++;
-        } else if(total >= sum){
-            /**
-             * If the current window adds up to at least the sum given then
-             * we can shrink the window by substracting arr[start] from current sum and moving "start" pointer up
-             */
-            minLen = Math.min(minLen, end-start);
-            total -= arr[start];
-            start++;
+    while(i < numsArray.length){
+        if(sum < num && j < numsArray.length){
+            sum += numsArray[j];
+            j++;
+        } else if(sum >= num){
+            minArrayLength = Math.min(minArrayLength, j-i);
+            sum -= numsArray[i];
+            i++;
         } else {
-            //Current total less than required total but we reach the end with second pointer "end".
             break;
         }
     }
-
-    return minLen === Infinity ? 0 : minLen;
+    return minArrayLength;
 }
+
+console.log(minSubArrayLen([2,3,1,2,4,3], 7));
