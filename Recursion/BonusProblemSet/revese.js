@@ -13,14 +13,14 @@ function reverse(str){
 function reverseTest(str){
     let result = "";
 
-    function helper(){
+    function helper(str){
         if(str.length === 1){
             return str[0];
         }
-        result = str[str.length-1] + reverse(str.substring(0,str.length-1));
+        return str[str.length-1] + helper(str.substring(0,str.length-1));
     }
 
-    helper(str);
+    result = helper(str);
     return result;
 }
 
