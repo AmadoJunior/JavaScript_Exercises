@@ -1,3 +1,4 @@
+//O(logN)
 function BinarySort(arr, num){
     let left = 0;
     let right = arr.length-1;
@@ -15,4 +16,4 @@ function BinarySort(arr, num){
     return null;
 }
 
-console.log(BinarySort(["a","b","c","x","y","z"], "y"));
+console.log(BinarySort(["a","b","c","x","y","z"], "h"));
