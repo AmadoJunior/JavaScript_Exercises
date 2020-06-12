@@ -7,7 +7,7 @@ function compareByLen(str1, str2){
 /**
  * The built in javascript sort method sort everything as strings
  * using character unicode in order to compare. Works great to sort
- * string in alphabetical order but does not work for number out of the box
+ * string in alphabetical order but does not work for numbers out of the box
  * 
  * 
  * Telling JavaScript how to sort:
