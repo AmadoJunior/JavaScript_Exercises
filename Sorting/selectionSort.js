@@ -4,6 +4,8 @@
  * Similar to bubble sort, but instead of first placing large values into sorted position, it
  * places small values into soretd position.
  * 
+ * Time Complexity: O(n^2)
+ * 
  * We look through the array and find the smallest values, we then place that values at the beggening
  * of the array and repeat that process on the rest of the array except that already sorted values.
  * 
@@ -18,7 +20,7 @@ function swap(arr, index1, index2){
 function selectionSort(arr){
     let min = 0;
     for(let i = 0; i < arr.length; i++){
-        for(let j = 0+i; j < arr.length; j++){
+        for(let j = i+1; j < arr.length; j++){
             if(arr[j] < arr[min]){
                 min = j;
             }
