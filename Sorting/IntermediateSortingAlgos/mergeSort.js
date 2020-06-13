@@ -43,6 +43,7 @@ function mergeSortedArrays(arr1, arr2){
  * - Once you have smaller sorted arrays, merge those arrays with other sorted arrays until ou are
  * back at the full length of the array.
  * - Once the array has been merged back together, return the merged (and sorted!) array.
+ * 
  */
 
 function mergeSort(arr){
@@ -57,4 +58,4 @@ function mergeSort(arr){
     return mergeSortedArrays(arr1, arr2);
 }
 
-console.log(mergeSort([5,4,3,2]))
+console.log(mergeSort([5,4,3,2,2,5,1,21,2]))
