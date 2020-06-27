@@ -1,6 +1,6 @@
 /**
  * Write a function called maxSubarraySum which accepts an array of 
- * integers and a number caleld n. The function should calculate the max
+ * integers and a number called n. The function should calculate the max
  * sum of n consecutive elements in the array.
  * 
  * Ex.
