@@ -39,3 +39,15 @@ var middleNode = function(head) {
     
     return head;
 }; 
+
+var middleNode = function(head) {
+    let slow = head;
+    let fast = head;
+
+    while(slow && fast.next){
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    
+    return slow;
+}; 
