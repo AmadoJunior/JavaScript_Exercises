@@ -19,6 +19,7 @@
  * @return {ListNode}
  */
 
+//Old Solution
 var middleNode = function(head) {
     let count = 0;
     let curNode = head;
@@ -40,14 +41,15 @@ var middleNode = function(head) {
     return head;
 }; 
 
+//Smart Solution
 var middleNode = function(head) {
     let slow = head;
     let fast = head;
 
-    while(slow && fast.next){
+    while(slow !== null && fast !== null && fast.next !== null){
         slow = slow.next;
         fast = fast.next.next;
     }
-    
+
     return slow;
 }; 
