@@ -42,4 +42,43 @@ class DoublyLinkedList{
         this.length--;
         return currTail.val;
     }
+    shift(val){
+        let newNode = new Node(val);
+        if(!this.head){
+            this.head = newNode;
+        } else {
+            let oldHead = this.head;
+            this.head = newNode;
+            newNode.next = oldHead;
+            oldHead.prev = newNode;
+        }
+        this.length++;
+    }
+    unshift(){
+        if(!this.head) {
+            return undefined;
+        }
+        let newHead = this.head.next;
+        let oldHead = this.head;
+        newHead.prev = null;
+        this.head = newHead;
+        oldHead.next = null;
+        return oldHead.val;
+    }
+}
+
+//Testing
+let list = new DoublyLinkedList();
+//Populate List
+for(let i = 0; i < 10; i++){
+    list.push(i);
+}
+//Test Method
+list.shift(-1);
+
+//Printing
+let currHead = list.head;
+while(currHead !== null){
+    console.log(currHead.val);
+    currHead = currHead.next;
 }
