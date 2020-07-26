@@ -74,11 +74,20 @@ for(let i = 0; i < 10; i++){
     list.push(i);
 }
 //Test Method
-list.shift(-1);
+list.pop();
 
 //Printing
 let currHead = list.head;
-while(currHead !== null){
+while(currHead){
     console.log(currHead.val);
     currHead = currHead.next;
+}
+
+console.log("==================================")
+
+//Reverse Printing
+let currTail = list.tail;
+while(currTail){
+    console.log(currTail.val);
+    currTail = currTail.prev;
 }
