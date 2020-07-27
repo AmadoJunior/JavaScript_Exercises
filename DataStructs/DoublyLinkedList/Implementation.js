@@ -63,7 +63,59 @@ class DoublyLinkedList{
         newHead.prev = null;
         this.head = newHead;
         oldHead.next = null;
+        this.length--;
         return oldHead.val;
+    }
+    get(index){
+        if(index > this.length || index < 0){
+            return undefined;
+        }
+        if(index <= Math.floor((this.length-1)/2)){
+            let count = 0;
+            let currNode = this.head;
+            while(currNode){
+                if(count === index){
+                    return currNode;
+                } else {
+                    currNode = currNode.next;
+                    count++;
+                }
+            }
+        } else {
+            let count = this.length-1;
+            let currNode = this.tail;
+            while(currNode){
+                if(count === index){
+                    return currNode;
+                } else {
+                    currNode = currNode.prev;
+                    count--;
+                }
+            }
+        }
+    }
+    set(index, value){
+        let chosenNode = this.get(index);
+        if(!chosenNode){
+            return undefined;
+        } else {
+            chosenNode.val = value;
+        }
+    }
+    remove(index){
+        let chosenNode = this.get(index);
+        if(chosenNode === this.head){
+            this.unshift();
+        } else if(chosenNode === this.tail){
+            this.pop();
+        } else {
+            let prev = chosenNode.prev;
+            let next = chosenNode.next;
+            prev.next = next;
+            next.prev = prev;
+            chosenNode.next = null;
+            chosenNode.prev = null;
+        }
     }
 }
 
@@ -74,7 +126,7 @@ for(let i = 0; i < 10; i++){
     list.push(i);
 }
 //Test Method
-list.pop();
+list.remove(5);
 
 //Printing
 let currHead = list.head;
