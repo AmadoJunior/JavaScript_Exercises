@@ -102,6 +102,22 @@ class DoublyLinkedList{
             chosenNode.val = value;
         }
     }
+    insert(index, val){
+        if(index === 0){
+            this.shift(val)
+        } else if(index === this.length-1){
+            this.push(val);
+        } else {
+            let newNode = new Node(val);
+            let chosenNode = this.get(index);
+            let prevNode = chosenNode.prev;
+            newNode.prev = prevNode;
+            newNode.next = chosenNode;
+            prevNode.next = newNode;
+            chosenNode.prev = newNode;
+        }
+        
+    }
     remove(index){
         let chosenNode = this.get(index);
         if(chosenNode === this.head){
@@ -126,7 +142,7 @@ for(let i = 0; i < 10; i++){
     list.push(i);
 }
 //Test Method
-list.remove(5);
+list.insert(5, 1000);
 
 //Printing
 let currHead = list.head;
